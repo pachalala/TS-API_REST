@@ -1,5 +1,5 @@
  
-import {createPool} from 'mysql2/promise'
+import {createPool, PoolOptions } from 'mysql2/promise'
 import {
   DB_HOST,
   DB_NAME,
@@ -8,12 +8,12 @@ import {
   DB_PORT
 } from './config'
    
-export const pool = createPool(
-   
-{ 
-  PoolOptions. user:   DB_USER,
+const poolOptions: PoolOptions = {
+  user: DB_USER,
   password: DB_PASSWORD,
   host: DB_HOST,
   port: DB_PORT,
   database: DB_NAME
-})
+};
+
+export const pool = createPool(poolOptions);
