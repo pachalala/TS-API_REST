@@ -1,4 +1,8 @@
 import express  from 'express';
+
+
+import   {pool }  from './db'
+
 const app = express();
 
 
@@ -6,15 +10,16 @@ app.use(express.json());
 
 const PORT = 3000;
 
-app.get('/ping', ( _req , res)=>{
+app.get('/ping',  async ( _req , res)=>{
  
+  const [rows, fields] = await pool.execute('SELECT * FROM platos');
+
   res.send('pong');
 
 } )
 
 app.listen(PORT, ()=>{
 
-    console.log('escuchando en ',PORT);
+    console.log('escuchando en jojo',PORT);
 }    
-    
-    );
+ );

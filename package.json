@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev" : "st-node-dev src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
     "start": "node build/index.js",
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,6 +18,7 @@
     "typescript": "^5.0.3"
   },
   "dependencies": {
-    "express": "4.18.2"
+    "express": "4.18.2",
+    "mysql2": "^3.2.0"
   }
 }
