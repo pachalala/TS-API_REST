@@ -12,9 +12,9 @@ const PORT = 3000;
 
 app.get('/ping',  async ( _req , res)=>{
  
-  const [rows, fields] = await pool.execute('SELECT * FROM platos');
+  const [rows, _fields] = await pool.execute('SELECT * FROM platos');
 
-  res.send('pong');
+  res.send(rows);
 
 } )
 

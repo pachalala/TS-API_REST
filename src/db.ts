@@ -6,7 +6,7 @@ import {
   DB_PASSWORD,
   DB_USER,
   DB_PORT
-} from './config'
+} from './config' 
    
 const poolOptions: PoolOptions = {
   user: DB_USER,
